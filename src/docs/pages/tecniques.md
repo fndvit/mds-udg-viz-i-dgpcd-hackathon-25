@@ -75,7 +75,7 @@ const MAPBOX_TOKEN = "pk.eyJ1IjoiZm5kdml0IiwiYSI6ImNseDR5dDV5dTBmeWMyaXNjemRkbDA
 # Exemples de codi
 
 ## Gràfics amb Plot
-[*Plot*](https://observablehq.com/plot/what-is-plot) és la biblioteca de *JavaScript* que vam fer servir a l'assignatura de *Visualització de l'Informació* i va ser especialment dissenyada per accelerar l'anàlisi exploratòria de dades.
+[*Plot*](https://observablehq.com/plot/what-is-plot) és la biblioteca de *JavaScript* que vam fer servir a l'assignatura de *Visualització de l'Informació* i que va ser especialment dissenyada per accelerar l'anàlisi exploratòria de dades.
 
 Aquest exemple visualitza dades anuals d'atur per província a Catalunya.
 
@@ -134,9 +134,9 @@ A sota es mostra un exemple de quatre *cards* per a les quatre províncies.
 ```
 
 ## Mapes amb Mapbox
-[*Mapbox*](https://www.mapbox.com/) és una llibreria per produïr mapes interactius en aplicacions web. En aquesta secció, explorarem com utilitzar *Mapbox* a *Observable Framework* per crear, per example, mapes coroplètics per mostrar dades geoespacials.
+[*Mapbox*](https://www.mapbox.com/) és una eina i API per produïr mapes interactius en aplicacions web. En aquesta secció, explorarem com utilitzar *Mapbox* a *Observable Framework* per crear, per example, mapes coroplètics per mostrar dades geoespacials.
 
-Aquest exemple mostra com crear un mapa coroplètic, que fa servir **color per representar la variable estadística al mapa**. En aquest cas es visualitzen dades d'atur per província.
+Aquest exemple mostra com crear un mapa coroplètic, que fa servir **color per representar la variable estadística al mapa**. En aquest cas es visualitzen unes dades inventades a quatre seccions censals a la provincia de Girona.
 
 ```js echo
 const choropleth = display(document.createElement("div"));
@@ -150,11 +150,12 @@ const map = new mapboxgl.Map({
   zoom: 6.8
 });
 
-const unemploymentData = [
-  { province: "Barcelona", rate: 8 },
-  { province: "Girona", rate: 6 },
-  { province: "Lleida", rate: 5 },
-  { province: "Tarragona", rate: 7 }
+const testData = [
+  { mundissec: "17901101001", rate: 8 },
+  { mundissec: "17022102003", rate: 6 },
+  { mundissec: "17181201002", rate: 5 },
+  { mundissec: "17044801002", rate: 7 }
+  //S'entenc, oi?
 ];
 
 const createColorExpression = (data) => {
@@ -172,10 +173,10 @@ const createColorExpression = (data) => {
     "#4c1787"
   ];
 
-  const matchExpression = ["match", ["get", "name"]];
+  const matchExpression = ["match", ["get", "MUNDISSEC"]];
 
   data.forEach((entry) => {
-    matchExpression.push(entry.province, entry.rate);
+    matchExpression.push(entry.mundissec, entry.rate);
   });
 
   matchExpression.push(0);
@@ -186,21 +187,21 @@ const createColorExpression = (data) => {
 };
 
 map.on('load', function () {
-  map.addSource('unemployment', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson'
+  map.addSource("seccen", {
+      type: "vector",
+      url: "mapbox://fndvit.3n29djx2",
+      promoteId: "MUNDISSEC"
   });
 
   map.addLayer({
-    id: 'unemployment-layer',
-    type: 'fill',
-    source: 'unemployment',
+    id: "seccen-fill",
+    type: "fill",
+    source: "seccen",
+    "source-layer": "seccen-dgddop",
     paint: {
-      'fill-color': createColorExpression(unemploymentData),
-      'fill-opacity': 0.5,
-      "fill-outline-color": createColorExpression(unemploymentData)
+      'fill-color': createColorExpression(testData),
     }
-  }, "waterway");
+  }, "admin-1-boundary-bg");
 });
 
 ```

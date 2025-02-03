@@ -14,7 +14,7 @@ La **font principal** son les dades corresponents a la informació pública dels
 
 Podeu accedir a les dades:
 
-- Al **repositori**, un `CSV` amb informació adicional.
+- Al [**repositori**](https://github.com/fndvit/mds-udg-viz-i-dgpcd-hackathon-25/blob/main/src/dades/font/certificats.csv), un `CSV` amb informació adicional.
 - A la pàgina de *Certificats d’eficiència energètica d’edificis* al [**portal de dades obertes**](https://analisi.transparenciacatalunya.cat/Energia/Certificats-d-efici-ncia-energ-tica-d-edificis/j6ii-t3w2).
 - Mitjançant l'[**API**](https://dev.socrata.com/foundry/analisi.transparenciacatalunya.cat/j6ii-t3w2).
 

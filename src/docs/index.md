@@ -19,7 +19,9 @@ toc: true
 # Eficiència energètica a Catalunya
 Aquesta hackató és una activitat compartida entre les assignatures de Gestió de Projectes en Ciència de Dades i Visualització de l'Informació, amb el suport de la [Fundació ViT](https://www.fundaciovit.org/), la [Càtedra Lluís Santaló d'Aplicacions de la Matemàtica](https://www.udg.edu/ca/catedres/Lluis-Santalo) i la [Càtedra d'Informació i Computació (Eurecat)](https://www.udg.edu/ca/catedres/informacio-i-computacio).
 
-La temàtica d'aquest any es la relació entre la TK TK
+Enguany, volem esbrinar com l'**eficiència energètica** dels edificis s'interrelaciona amb **desafiaments socials, econòmics i ambientals** a Catalunya. Utilitzant un conjunt de dades públic sobre certificats d'eficiència energètica, col·laborareu en la neteja i l'anàlisi de les dades per trobar patrons i relacions clau, i competireu en el desenvolupament d'un MVP segons el vostre escenari final.
+- Dimarts us centrareu en la integració de les dades d'eficiència energètica amb variables socioeconòmiques, ambientals i espacials per identificar tendències, desigualtats i possibles àrees d'intervenció.
+- Divendres us lliurarem els escenaris especialitzats en què abordareu qüestions relacionades amb l'eficiència energètica, l'equitat, la sostenibilitat i la reducció d'emissions.
 
 ### 🧑‍🎓 Aprendràs a…
 - Aplicar tècniques de ciència de dades a un cas real i sota pressió de temps.
