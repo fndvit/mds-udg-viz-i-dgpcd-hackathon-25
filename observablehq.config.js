@@ -115,4 +115,5 @@ export default {
   // linkify: true, // convert URLs in Markdown to links
   typographer: true, // smart quotes and other typographic improvements
   footer: '',
+  preserveExtension: true
 };
