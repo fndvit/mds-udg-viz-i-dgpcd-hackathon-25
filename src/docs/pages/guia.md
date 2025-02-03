@@ -1,5 +1,5 @@
 ---
-title: Una petita guia d'estil
+title: Una petita guia
 toc: false
 ---
 
