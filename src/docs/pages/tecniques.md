@@ -112,7 +112,7 @@ const lineChart = (width) => Plot.plot({
 });
 ```
 
-Normalment, utilitzareu els **gràfics dins de targetes** en un panell de dades. Llegiu més sobre les [nostres guies sobre com estructurar panells per a aquest projecte](./guia.md) i sobre com funcionen les [*grids* a *Observable Framework*](https://observablehq.com/framework/markdown#grids).
+Normalment, utilitzareu els **gràfics dins de targetes** en un panell de dades. Llegiu més sobre les [nostres guies sobre com estructurar panells per a aquest projecte](./guia) i sobre com funcionen les [*grids* a *Observable Framework*](https://observablehq.com/framework/markdown#grids).
 
 A sota es mostra un exemple de quatre *cards* per a les quatre províncies.
 
