@@ -1,0 +1,352 @@
+[
+  {
+    "Descripció": "Identificador del tràmit del certificat d'eficiència energètica",
+    "Nom de columna": "num_cas",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Nom del carrer",
+    "Nom de columna": "adre_a",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Número del carrer",
+    "Nom de columna": "numero",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Escala",
+    "Nom de columna": "escala",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Pis",
+    "Nom de columna": "pis",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Porta",
+    "Nom de columna": "porta",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Codi postal",
+    "Nom de columna": "codi_postal",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Municipi (d’acord amb la taula de municipis de Catalunya de l’Idescat)",
+    "Nom de columna": "poblacio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Comarca (d’acord amb la taula de comarques de Catalunya i de l’entitat territorial singular de l’Aran de l’Idescat)",
+    "Nom de columna": "comarca",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Província",
+    "Nom de columna": "nom_provincia",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Codi del municipi (d’acord amb la taula de municipis de Catalunya de l’Idescat)",
+    "Nom de columna": "codi_poblacio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Codi de la comarca (d’acord amb la taula de comarques de Catalunya i de l’entitat territorial singular de l’Aran de l’Idescat)",
+    "Nom de columna": "codi_comarca",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Codi de la província (d’acord amb la taula de províncies de l’INE)",
+    "Nom de columna": "codi_provincia",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Referència cadastral de l'edifici",
+    "Nom de columna": "referencia_cadastral",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Zona climàtica segons DB H1 del Codi Tècnic d’Edificació.",
+    "Nom de columna": "zona_climatica",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Superfície (m2)",
+    "Nom de columna": "metres_cadastre",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Any de construcció",
+    "Nom de columna": "any_construccio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Ús de l’edifici (habitatge, terciari)",
+    "Nom de columna": "us_edifici",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Lletra de qualificació d’energia primària no renovable (A-G)",
+    "Nom de columna": "qualificaci_de_consum_d",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Valor d’energia primària no renovable [kWh/m2·any]",
+    "Nom de columna": "energia_prim_ria_no_renovable",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Lletra de qualificació d’emissions de CO2 (A-G)",
+    "Nom de columna": "qualificacio_d_emissions",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Valor d’emissions de CO2 [kg CO2/m2·any]",
+    "Nom de columna": "emissions_de_co2",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Energia en el punt de consum equivalent al consum energètic [kWh/m2·any]",
+    "Nom de columna": "consum_d_energia_final",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Cost anual aproximat d’energia per habitatge",
+    "Nom de columna": "cost_anual_aproximat_d_energia",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Disposa de punt de recàrrega de vehicle elèctric (Sí/no)",
+    "Nom de columna": "vehicle_electric",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Disposa d’instal·lació solar tèrmica (Sí/no)",
+    "Nom de columna": "solar_termica",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Disposa d’instal·lació fotovoltaica (Sí/no)",
+    "Nom de columna": "solar_fotovoltaica",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Disposa d’instal·lació de biomassa (Sí/no)",
+    "Nom de columna": "sistema_biomassa",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Disposa de connexió a una xarxa de districte de generació de calor i/o fred (Sí/no)",
+    "Nom de columna": "xarxa_districte",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Disposa d’instal·lació geotèrmica (Sí/no)",
+    "Nom de columna": "energia_geotermica",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Codi del certificat d’aptitud de la Inspecció Tècnica de l’Edifici d’Habitatges (IITE)",
+    "Nom de columna": "informe_ins_tecnica_edifici",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Eina utilitzada per realitzar el certificat",
+    "Nom de columna": "eina_de_certificacio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Transmitància mitjana de façana [W/m2·K]",
+    "Nom de columna": "valor_aillaments",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Transmitància mitjana de finestres [W/m2·K]",
+    "Nom de columna": "valor_finestres",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Motiu per fer la certificació (nova construcció, lloguer, compravenda, …)",
+    "Nom de columna": "motiu_de_la_certificacio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Transmitància màxima de façana segons CTE [W/m2·K]",
+    "Nom de columna": "valor_aillaments_cte",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Transmitància màxima de finestres segons CTE [W/m2·K]",
+    "Nom de columna": "valor_finestres_cte",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Coordenades UTM X",
+    "Nom de columna": "utm_x",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Coordenades UTM Y",
+    "Nom de columna": "utm_y",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Normativa de construcció (CTE)",
+    "Nom de columna": "normativa_construcci",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Tipus de tràmit (nova construcció, existent)",
+    "Nom de columna": "tipus_tramit",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Tipus de terciari (oficines, restauració, …)",
+    "Nom de columna": "tipus_terciari",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Qualificació d’emissions de CO2 associades al servei de calefacció (A-G)",
+    "Nom de columna": "qualificaci_emissions",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Emissions de CO2 associades al servei de calefacció [kg CO2/m2·any]",
+    "Nom de columna": "emissions_calefacci",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació d’emissions de CO2 associades al servei de refrigeració (A-G)",
+    "Nom de columna": "qualificaci_emissions_1",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Emissions de CO2 associades al servei de refrigeració [kg CO2/m2·any]",
+    "Nom de columna": "emissions_refrigeraci",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació d’emissions de CO2 associades al servei d’ACS",
+    "Nom de columna": "qualificaci_emissions_acs",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Emissions de CO2 associades al servei d’ACS [kg CO2/m2·any]",
+    "Nom de columna": "emissions_acs",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació d’emissions de CO2 associades al servei d’il·luminació (A-G)",
+    "Nom de columna": "qualificaci_emissions_2",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Emissions de CO2 associades al servei d’il·luminació[kg CO2/m2·any]",
+    "Nom de columna": "emissions_enllumenament",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de consum d’energia primària no renovable pel servei de calefacció (A-G)",
+    "Nom de columna": "qualificaci_energia_calefacci",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Consum d’energia primària no renovable pel servei de calefacció [kWh/m2·any]",
+    "Nom de columna": "energia_calefacci",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de consum d’energia primària no renovable pel servei de refrigeració (A-G)",
+    "Nom de columna": "qualificaci_energia",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Consum d’energia primària no renovable pel servei de refrigeració [kWh/m2·any]",
+    "Nom de columna": "energia_refrigeraci",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de consum d’energia primària no renovable pel servei d’aigua calenta sanitària (A-G",
+    "Nom de columna": "qualificaci_energia_acs",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Consum d’energia primària no renovable pel servei d’ACS [kWh/m2·any]",
+    "Nom de columna": "energia_acs",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de consum d’energia primària no renovable pel servei de il·luminació (A-G)",
+    "Nom de columna": "qualificaci_energia_1",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Consum d’energia primària no renovable pel servei de il·luminació [kWh/m2·any]",
+    "Nom de columna": "energia_enllumenament",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de la demanda energia de calefacció (A-G)",
+    "Nom de columna": "qualificaci_energia_calefacci_1",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Demanda energia de calefacció [kWh/m2·any]",
+    "Nom de columna": "energia_calefacci_demanda",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Qualificació de la demanda energia de refrigeració (A-G)",
+    "Nom de columna": "qualificaci_energia_2",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Demanda energia de refrigeració [kWh/m2·any]",
+    "Nom de columna": "energia_refrigeraci_demanda",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Taxa de ventilació per a ús residencial [ren/h]",
+    "Nom de columna": "ventilacio_us_residencial",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Longitud expressada en graus decimals. Sistema de referència WGS84",
+    "Nom de columna": "longitud",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Latitud expressada en graus decimals. Sistema de referència WGS84",
+    "Nom de columna": "latitud",
+    "Tipus de dades": "Nombre"
+  },
+  {
+    "Descripció": "Columna de georeferència",
+    "Nom de columna": "georeferencia",
+    "Tipus de dades": "Punt"
+  },
+  {
+    "Descripció": "S’ha realitzat una rehabilitació energètica [Sí/no]",
+    "Nom de columna": "rehabilitacio_energetica",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Actuacions de la rehabilitació",
+    "Nom de columna": "actuacions_rehabilitacio",
+    "Tipus de dades": "Text"
+  },
+  {
+    "Descripció": "Data d’inscripció al registre",
+    "Nom de columna": "data_entrada",
+    "Tipus de dades": "Data"
+  },
+  {
+    "Descripció": "Hora d’inscripció al registre",
+    "Nom de columna": "hora_entrada",
+    "Tipus de dades": "Segell de temps flotant"
+  }
+]
