@@ -53,27 +53,16 @@ export default {
       open: true,
       pages: [
         {name: "Donicelas",
-          path: "/donicelas/",
-          pages: [
-            {name: "Brief", path: "/donicelas/pages/brief"},
-          ]},
+          path: "/projectes/donicelas/",
+        },
         {name: "Raposos",
-          path: "/raposos/",
-          pages: [
-            {name: "Brief", path: "/raposos/pages/brief"},
-          ]
+          path: "/projectes/raposos/",
         },
         {name: "Teixugos",
-          path: "/teixugos/",
-          pages: [
-            {name: "Brief", path: "/teixugos/pages/brief"},
-          ]
+          path: "/projectes/teixugos/",
         },
         {name: "Xabaríns",
-          path: "/xabarins/",
-          pages: [
-            {name: "Brief", path: "/xabarins/pages/brief"},
-          ]
+          path: "/projectes/xabarins/",
         }
       ]
     }
