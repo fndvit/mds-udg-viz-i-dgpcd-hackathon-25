@@ -2,8 +2,7 @@
 
 export default {
   title: "Hackató 2025",
-  head: `
-  <meta charset="UTF-8">
+  head: `<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hackató Màster en Ciència de Dades UdG 2025</title>
   <meta name="description" content="Aquesta hackató és una activitat compartida entre les assignatures de Gestió de Projectes en Ciència de Dades i Visualització de l'Informació del Màster de Ciència de Dades de la Universitad de Girona. Amb el suport de la ViT Foundation, la Càtedra Lluís Santaló d'Aplicacions de la Matemàtica i la Càtedra d'Informació i Computació (Eurecat).">
@@ -26,8 +25,7 @@ export default {
   <link rel="stylesheet" href="styles.css">
   <noscript>
     <link rel="stylesheet" href="https://use.typekit.net/vpz4xzt.css" />
-  </noscript>
-  `,
+  </noscript>`,
   // search: false,
   pages: [
     {
