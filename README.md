@@ -1,59 +1,86 @@
-# Hackathon MDS 2025
+![Sponsored by the Escola Politècnica Superior EPS - UdG, ViT Foundation, the Càtedra Lluís Santaló d'Aplicacions de la Matemàtica, and the Càtedra d'Informació i Computació (Eurecat)](/src/img/logos.png)
 
-This is an [Observable Framework](https://observablehq.com/framework/) app. To install the required dependencies, run:
+# Eficiència energètica a Catalunya
+![GitHub License](https://img.shields.io/github/license/fndvit/mds-udg-viz-i-dgpcd-hackathon-25?style=for-the-badge) ![Issues](https://img.shields.io/github/issues/fndvit/mds-udg-viz-i-dgpcd-hackathon-25?style=for-the-badge)
 
-```
-npm install
-```
+Aquesta hackató és una activitat compartida entre les assignatures de Gestió de Projectes en Ciència de Dades i Visualització de l'Informació, amb el suport de la [Fundació ViT](https://www.fundaciovit.org/), la [Càtedra Lluís Santaló d'Aplicacions de la Matemàtica](https://www.udg.edu/ca/catedres/Lluis-Santalo) i la [Càtedra d'Informació i Computació (Eurecat)](https://www.udg.edu/ca/catedres/informacio-i-computacio).
 
-Then, to start the local preview server, run:
+La temàtica d'aquest any es la relació entre la TK TK
 
-```
-npm run dev
-```
+### 🧑‍🎓 Aprendràs a…
+- Aplicar tècniques de ciència de dades a un cas real i sota pressió de temps.
+- Utilitzar tècniques de visualització de dades per traduir *insights* en històries visuals accionables.
+- Fer servir l'*[Observable Framework](https://observablehq.com/framework/)* per al disseny de panells de dades.
+- Documentar el procés per compartir coneixement i per fomentar el model de codi obert, garantint transparència i reproductibilitat.
+- Desenvolupar habilitats de col·laboració en equip, incloent comunicació, planificació, delegació de tasques i resolució iterativa de problemes.
 
-Then visit <http://localhost:3000> to preview your app.
+### 📅 Preparació prèvia a la hackató:
+La preparació prèvia és clau per ser eficient i efectiu durant l'esdeveniment principal. Això implica entendre el tema, organitzar l’equip, generar idees i configurar les eines i l’entorn necessaris amb antelació. Així, us podreu centrar en desenvolupar el projecte en comptes de resoldre problemes logístics o tècnics.
 
-For more, see <https://observablehq.com/framework/getting-started>.
+La **col·laboració serà essencial**. Assegureu-vos de coordinar-vos amb altres equips, ja que les fases inicials de cada grup es solaparan i hauran de ser compartides.
 
-## Project structure
+---
 
-A typical Framework project looks like this:
+## Equips
 
-```ini
-.
-├─ src
-│  ├─ components
-│  │  └─ timeline.js           # an importable module
-│  ├─ data
-│  │  ├─ launches.csv.js       # a data loader
-│  │  └─ events.json           # a static data file
-│  ├─ example-dashboard.md     # a page
-│  ├─ example-report.md        # another page
-│  └─ index.md                 # the home page
-├─ .gitignore
-├─ observablehq.config.js      # the app config file
-├─ package.json
-└─ README.md
-```
+| ![](/src/img/donicela.png)<br/>Donicelas                             | ![](/src/img/raposa.png)<br/>Raposos                               | ![](/src/img/teixon.png)<br/>Teixugos                              | ![](/src/img/xabarin.png)<br/>Xabaríns                              |
+|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|
+| Enric                                 | Aniol                                 | Alam                                  |  Alaín                                |
+| Mariangel                             | Cecilia                               | Ivan                                  |  Alex                                 |
+| Mikhail                               | Jesús                                 | Juan                                  |  Bruno                                |
+| Pau J.                                | Pol                                   | Marc                                  |  Joel                                 |
+| Simon                                 | Ramon Maria                           | Oksana                                |  Joan                                 |
+| Victor                                | Sergi                                 | Pau M.                                |  Libny                                |
+|                                       |                                       |                                       |  Oriol                                |
 
-**`src`** - This is the “source root” — where your source files live. Pages go here. Each page is a Markdown file. Observable Framework uses [file-based routing](https://observablehq.com/framework/project-structure#routing), which means that the name of the file controls where the page is served. You can create as many pages as you like. Use folders to organize your pages.
+---
 
-**`src/index.md`** - This is the home page for your app. You can have as many additional pages as you’d like, but you should always have a home page, too.
+## Activitats i horari
+La sessió preparatòria es durà a terme a la nostra sessió regular el **dimarts 4 de febrer de 2025, a les 16:30**.
 
-**`src/data`** - You can put [data loaders](https://observablehq.com/framework/data-loaders) or static data files anywhere in your source root, but we recommend putting them here.
+La **Hackató de jornada completa** es realitzarà al **Edifici P-IV, EPS UdG, el dissabte 8 de febrer de 2025 a les 08:45**. Oferirem esmorzar 🥐, dinar 🍕, snacks 🍊 i cafè ☕.
 
-**`src/components`** - You can put shared [JavaScript modules](https://observablehq.com/framework/imports) anywhere in your source root, but we recommend putting them here. This helps you pull code out of Markdown files and into JavaScript modules, making it easier to reuse code across pages, write tests and run linters, and even share code with vanilla web applications.
+- 👋 **08:45** Benvinguda, esmorzar ☕🥐 i configuració per equips.
+- 🙋‍♀️ **09:15** Reunió inicial: objectius, processos i metes per a la hackató.
+- 👩‍💻 **09:30** Inici de la jornada de treball!
+- 🙋‍♀️ **13:45** *Standup*.
+- 🍕 **14:00** Dinar.
+- 👩‍💻 **15:00** Tornem a treballar.
+- 🧑‍🏫 **19:00** Presentació final (5-7 minuts per equip):
+  - Què s'ha aconseguit?
+  - Quins han estat els reptes més importants i què ha estat útil?
+  - Què queda per fer?
+- 🏆 **19:45** Premis.
+- 🍻 **20:00** Final!!!
 
-**`observablehq.config.js`** - This is the [app configuration](https://observablehq.com/framework/config) file, such as the pages and sections in the sidebar navigation, and the app’s title.
+---
 
-## Command reference
+## 🏆 Els premis
+Com tots sabem, [el jurat professional i el vot popular no sempre coincideixen](https://www.youtube.com/watch?v=4uGN9efcACw), així que oferirem **dos premis**:
+1. **Vot popular**: decidireu amb un sistema de vot obert (3, 2 i 1 punts, sense poder votar-vos a vosaltres mateixos).
+2. **Premi del jurat**: decidirà un jurat extern.
 
-| Command           | Description                                              |
-| ----------------- | -------------------------------------------------------- |
-| `npm install`            | Install or reinstall dependencies                        |
-| `npm run dev`        | Start local preview server                               |
-| `npm run build`      | Build your static site, generating `./dist`              |
-| `npm run deploy`     | Deploy your app to Observable                            |
-| `npm run clean`      | Clear the local data loader cache                        |
-| `npm run observable` | Run commands like `observable help`                      |
+- 🏆 **Favorit del jurat**: Targeta regal de **500 €** per a l'equip (patrocinat per la Càtedra Informació i Computació via Eurecat).
+- 🏆 **Vot popular**: 'In the wild', llibre amb una col·lecció de visualitzacions de dades curada pel Xaquín (patrocinat per la ViT).
+
+---
+
+## 📊 Criteris d'avaluació
+
+### **Per a l'assignatura de Gestió de Projectes:**
+- **35%** Participació activa i compromís amb els rols assignats.
+- **15%** Avaluació dels companys dins l’equip (compromís amb els rols).
+- **25%** Persuasió i confiança en la presentació dels resultats.
+- **25%** Creativitat, viabilitat i precisió dels lliurables.
+
+La hackató representa el **25% de la nota final** de l'assignatura.
+
+### **Per a l'assignatura de Visualització d’Informació:**
+- **0,5 punts** per participar activament.
+- **0,5 punts** per als equips guanyadors (+0,25 si el vot popular i el jurat coincideixen).
+- Es tindrà en compte:
+  - Claredat en la presentació dels resultats.
+  - Estratègies per ressaltar patrons.
+  - Integració de visuals amb la documentació o text a l’Observable app.
+
+La hackató representa el **10% de la nota final** de l'assignatura (1 punt complet).
