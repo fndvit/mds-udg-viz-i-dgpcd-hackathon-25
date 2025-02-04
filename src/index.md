@@ -4,7 +4,7 @@ toc: false
 
 <div class="hero">
   <h1>Hackató Màster de Ciència de Dades 2025</h1>
-  <h2>TK TK</h2>
+  <h2>Com s'interrelaciona l'eficiència energètica dels edificis amb desafiaments socials, econòmics i ambientals a Catalunya?</h2>
 </div>
 
 
