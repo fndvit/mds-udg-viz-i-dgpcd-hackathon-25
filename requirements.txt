@@ -4,3 +4,4 @@ seaborn==0.13.2
 tqdm==4.67.1
 pandas==2.2.3
 scikit_learn==1.6.1
+sodapy==2.2.0
