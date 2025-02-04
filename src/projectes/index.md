@@ -12,9 +12,9 @@ toc: false
   }
 </style>
 
-# Coming soon ...
+# Presentacions
 
-Cada grup haurà de enfrentar-se a un escenari de ciència de dades diferent —tots a partir de les mateixes dades de **eficiència energètica**—. Aquests escenaris estaràn disponible divendres. Estigueu atents als nostres canals de comunicació oficials per no perdre-us cap novetat ni instrucció addicional.
+Cada grup ha d'enfrentar-se a un escenari de ciència de dades diferent, tots a partir de les mateixes dades de **eficiència energètica**. A les pàgines de cadascú —al menu de la esquerra— trobareu els escenaris corresponents.
 
 A aquesta pàgina penjarem les presentacions en *Google Slides*.
 
