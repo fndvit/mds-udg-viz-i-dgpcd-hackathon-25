@@ -10,7 +10,7 @@ toc: false
 
 ---
 
-## Next steps
+## Que vols fer ara?
 
 <div class="grid grid-cols-4">
   <div class="card">
