@@ -9,7 +9,7 @@ Un punt important és que el dataset estarà filtrat per aquells edificis que si
 
 ## Estructura del Dataset  
 
-A continuació es descriuen les columnes que utilitzarem del dataset **certificats.csv**:
+A continuació es descriuen les columnes que utilitzarem, extretes del dataset de **certificats.csv** (1-6) i de l'INE (7):
 
 ### **1. Identificació i Ubicació**  
 - `mundissec`: Identificador únic de la secció censal on es troba l'edifici.  
@@ -44,9 +44,6 @@ A continuació es descriuen les columnes que utilitzarem del dataset **certifica
 ### **6. Rehabilitació i Millores Energètiques**  
 - `rehabilitacio_energetica`: S’ha realitzat una rehabilitació energètica (Sí/No).  
 - `actuacions_rehabilitacio`: Actuacions de la rehabilitació.  
-
-
-I seguidament les columnes que hem extret de l'INE:
 
 ### **7. Dades Econòmiques i Demogràfiques**  
 - `codi_districte`: Codi que identifica el districte administratiu.  
