@@ -1,6 +1,6 @@
 # Issue with `mundissec` Column in `certificats.csv`
 
-Brought to you by Team Raposos
+Brought to you by Team Raposos 🦊
 
 ## Problem Description
 
