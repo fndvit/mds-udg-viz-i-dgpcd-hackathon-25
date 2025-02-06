@@ -39,6 +39,7 @@ export default {
       open: true,
       pages: [
         {name: "Font i dades", path: "/dades/"},
+        {name: "Some issues", path: "/dades/issues"},
       ]
     },
     {
