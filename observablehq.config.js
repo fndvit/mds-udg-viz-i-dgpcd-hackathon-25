@@ -47,16 +47,26 @@ export default {
       path: "/projectes/",
       open: true,
       pages: [
-        {name: "Donicelas",
+        {
+          name: "Donicelas",
           path: "/projectes/donicelas/",
         },
-        {name: "Raposos",
+        {
+          name: "Raposos",
           path: "/projectes/raposos/",
+          pages: [
+            {
+              name: "Visualitzacions",
+              path: "/projectes/raposos/visualitzacions/"
+            }
+          ]
         },
-        {name: "Teixugos",
+        {
+          name: "Teixugos",
           path: "/projectes/teixugos/",
         },
-        {name: "Xabaríns",
+        {
+          name: "Xabaríns",
           path: "/projectes/xabarins/",
         }
       ]
