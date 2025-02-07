@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico con Observable Plot</title>
+    <script type="module">
+        import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+
+        const data = [
+            { name: "Producto A", ventas: 30 },
+            { name: "Producto B", ventas: 80 },
+            { name: "Producto C", ventas: 45 },
+            { name: "Producto D", ventas: 60 }
+        ];
+
+        const chart = Plot.plot({
+            marks: [
+                Plot.barY(data, { x: "name", y: "ventas", fill: "steelblue" })
+            ],
+            x: { label: "Productos" },
+            y: { label: "Ventas" }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.appendChild(chart);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
