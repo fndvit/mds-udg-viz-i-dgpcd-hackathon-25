@@ -1,6 +1,6 @@
 ---
 title: Xabaríns
-toc: false
+toc: true
 ---
 
 <style>
@@ -209,3 +209,4 @@ Plot.plot({
   }
 })
 ```
+
