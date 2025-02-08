@@ -12,51 +12,198 @@ toc: true
   }
 </style>
 
-# Reducció d'emissions
+# Xabaríns
 
-Els edificis representen una part significativa de les emissions de carboni, però no tots contribueixen de la mateixa manera. Alguns edificis són grans emissors, mentre que altres ja estan optimitzats. Quins factors determinen aquestes diferències i on poden tenir més impacte les intervencions?
+## Relació entre Eficiència Energètica i Emissions de Carboni
 
-## Objectius
+Per analitzar la relació entre eficiència energètica i emissions de CO₂, primer hem comprovat la normalitat de la distribució.
 
-- Analitzar com es relacionen les qualificacions d'eficiència energètica amb les emissions de carboni en diferents tipus d'edificis, ubicacions i patrons d'ús.
-- Identificar quins edificis i zones presenten el major potencial per a reduir emissions mitjançant intervencions específiques.
-- Desenvolupar una eina d’assistència a la presa de decisions per prioritzar polítiques i inversions que maximitzin la reducció d’emissions per intervenció.
+A continuació, hem realitzat una ANOVA per comparar la variable numèrica "emissions_de_co2" amb tres variables categòriques:
 
-## Algunes preguntes ...
+- *Qualificació de Consum d’Energia Primària No Renovable*
+- *Qualificació d’Emissions de CO₂*
+- *Zona Climàtica*
 
-- Quins tipus d'edificis generen més emissions en relació amb la seva eficiència energètica?
-- Hi ha patrons geogràfics o d'ús que expliquin diferències significatives en les emissions?
-- Com es poden identificar els edificis amb el màxim potencial de reducció d'emissions?
-- Quines polítiques o intervencions resulten més eficients en termes de reducció d'emissions per euro invertit?
+Els resultats han estat els següents:
 
-## Lliurables
+| Tipus de Qualificació | Estadístic F | p-Valor |
+|-----------------------|-------------|---------|
+| Qualificació de Consum d’Energia Primària No Renovable | 80688.64 | 0.00 |
+| Qualificació d’Emissions de CO₂ | 112684.87 | 0.00 |
+| Zona Climàtica | 2529.73 | 0.00 |
 
-- Un **informe** que descrigui la relació entre eficiència energètica i emissions de carboni ...
-- ... amb **visualitzacions** que mostrin els edificis i zones amb major impacte potencial en la reducció d'emissions.
-- Un **prototip** d'eina per ajudar en la presa de decisions sobre inversions i polítiques de reducció d'emissions.
-- Una presentació (*Google Slides*) per explicar al final de la Hackató.
+### Interpretació
 
-Excepte la presentació, que serà un enllaç, la resta de documents els haureu de lliurar a aquest repositori, per exemple:
+Els valors de *p-valor* són tots significatius (0.00), cosa que indica diferències estadísticament rellevants entre els grups de cada variable categòrica en relació amb les emissions de CO₂. 
+
+- La *qualificació d’emissions de CO₂* presenta l’F més alt, la qual cosa suggereix que aquesta variable té la relació més forta amb les emissions de CO₂.
+- La *qualificació de consum d’energia primària no renovable* també mostra una relació molt significativa, confirmant que l’eficiència energètica té un impacte directe en les emissions.
+- La *zona climàtica* té un efecte menor en comparació amb les altres dues variables, però continua sent estadísticament significativa.
+
+Aquests resultats reforcen la idea que una millor eficiència energètica es tradueix en una reducció d’emissions de CO₂, mentre que la zona climàtica influeix però amb menys pes que les qualificacions energètiques.
+
+## Resultats de Correlació
+
+<table style="width: 400px; border-collapse: collapse;">
+  <tr>
+    <th style="width: 40%;">Tipus de Correlació</th>
+    <th style="width: 30%;">Energia Primària</th>
+    <th style="width: 30%;">Consum Final</th>
+  </tr>
+  <tr>
+    <td>Pearson</td>
+    <td>0.4412</td>
+    <td>0.6251</td>
+  </tr>
+  <tr>
+    <td>Spearman</td>
+    <td>0.9555</td>
+    <td>0.6085</td>
+  </tr>
+  <tr>
+    <td>Kendall</td>
+    <td>0.8401</td>
+    <td>0.5113</td>
+  </tr>
+</table>
+
+
+#### Correlació de Pearson  
+Mesura la relació lineal entre variables. L'energia primària té una correlació moderada (0.4412) amb les emissions de CO2, mentre que el consum final presenta una correlació més forta (0.6251), indicant un impacte més directe sobre les emissions.
+
+#### Correlació de Spearman  
+Avalua relacions monòtones, independentment de si són lineals. L'energia primària té una correlació molt alta (0.9555) amb les emissions, suggerint que augmenta de manera constant amb aquestes. El consum final també mostra una relació positiva (0.6085), però menys intensa.
+
+#### Correlació de Kendall  
+Similar a Spearman, basada en dades ordenades. L'energia primària presenta una forta correlació (0.8401), confirmant una relació consistent amb les emissions. El consum final té una correlació més baixa (0.5113), suggerint que altres factors com l'eficiència energètica poden influir.
+
+### Interpretació  
+- L'energia primària té una correlació més forta amb les emissions que el consum final en tots els casos, indicant que el total d'energia utilitzada al sistema és un millor predictor d'emissions.  
+- Les correlacions de Spearman i Kendall indiquen que l'energia primària afecta les emissions de manera més estable que el consum final, possiblement a causa de pèrdues en generació i transport.  
+- El consum final també té una relació significativa amb les emissions, però pot estar afectat per l'eficiència energètica o l'ús de renovables.  
+
+### Definicions  
+*Energia primària no renovable:* energia en el seu estat original abans de ser transformada (petroli, gas natural, etc.). Inclou només fonts no renovables i pateix pèrdues en generació i transport.  
+
+*Consum d’energia final:* energia que arriba als usuaris després de les pèrdues en generació i transport. Pot incloure fonts renovables i no renovables.
+
+
+```js
+
+import {FileAttachment} from "observablehq:stdlib";
+const byQualification = FileAttachment("p1_groupby_qualification.csv").csv({typed: true});
 
 ```
-.
-├─ src
-│  ├─ projectes
-│  │  ├─ teixugos
-│  │  │  ├─ dades
-│  │  │  │  ├─ data.json
-│  │  │  │  └─ ...
-│  │  │  ├─ informe.md
-│  │  │  ├─ metodologia.md
-│  │  │  ├─ index.md
-│  │  │  └─ ...
-│  │  └─ ...
-│  └─ ...
-└─ ...
+```js
+const type = view(Inputs.select(Object.keys(byQualification[0]).filter(d => d !== "qualificacio_demissions_de_co2"), {value: "steelblue", label: "Group by: "}));
 ```
 
-## Consideracions
+```js
+Plot.plot({
+  marks: [
+    Plot.barX(byQualification, { 
+      y: "qualificacio_demissions_de_co2",  // Categoría en el eje Y
+      x: type,                      // Valor numérico en el eje X
+      fill: type                     // Color de las barras
+    })
+  ]
+})
 
-- Tingueu en compte la disponibilitat i qualitat de les dades d'emissions i eficiència energètica.
-- Analitzeu com les característiques dels edificis, com la mida o l'ús, influeixen en les emissions.
-- Proposeu indicadors clau per mesurar l'èxit de les intervencions en termes de reducció d'emissions i eficiència econòmica.
+```
+
+```js
+const groupedData = FileAttachment("p2_groupedData.csv").csv({typed: true});
+```
+```js
+const p1 = {
+  marks: [
+    Plot.barY(groupedData, { 
+      x: "category", 
+      y: "emissions_mean", 
+      sort: { x: "y", reverse: true },
+      fill: "red" 
+    }),
+    Plot.ruleY([0]) // Baseline at zero
+  ],
+  x: { label: "Qualification CO₂ Emissions" },
+  y: { label: "Mean CO₂ Emissions" },
+  marginLeft: 60,
+  marginBottom: 50
+};
+```
+```js
+const groupedData2 = FileAttachment("p3_groupedData2.json").json();
+```
+
+```js
+const p2 = {
+  marginBottom:100,
+  marks: [
+    Plot.barY(
+      groupedData2.flatMap(d => 
+        (d.subcategories || []).map(sub => ({
+          category: d.category,
+          subcategory: sub.subcategory.length > 10 ? sub.subcategory.slice(0, 10) + "…" : sub.subcategory, // Truncate long names
+          emissions_mean: sub.emissions_mean
+        }))
+      ), 
+      { 
+        x: "subcategory", 
+        y: "emissions_mean", 
+        fill: "category",  
+        fx: "category",   
+        tip: { format: { emissions_mean: ".2f" } } 
+      }
+    ),
+    Plot.ruleY([0]) 
+  ],
+  x: { 
+    label: "Building Type", 
+    tickRotate: -45,
+    tickSize: 4,
+  },
+  y: { label: "Mean CO₂ Emissions" },
+  color: { legend: true, label: "Category" }, 
+  marginLeft: 60,
+  marginBottom: 80
+};
+```
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+  <h2>Quins tipus d’edificis generen més emissions?</h2>
+  <p>Comparant emissions segons la seva qualificació energ.</p>
+  <div style="display: flex; width: 100%; align-items: center;">
+    <div style="width: 53%; min-height: 400px;">${Plot.plot(p1)}</div>
+    <div style="width: 47%; min-height: 450px;">${Plot.plot(p2)}</div>
+  </div>
+</div>
+
+## Q5
+```js
+const scatter_q5 = FileAttachment("scatter_q5.csv").csv({typed: true});
+console.log(scatter_q5)
+```
+
+```js
+// Crear el scatter plot con facetas
+Plot.plot({
+  facet: {
+    data: scatter_q5,
+    y: "zona_climatica",  // Facetamos por zona_climatica
+  },
+  x: { domain: [0, 1] },
+  marks: [
+    Plot.dot(scatter_q5, {
+      y: "emissions_de_co2",
+      x: "indice_energia",
+      fill: "us_edifici",  // Color basado en us_edifici
+      r: 1 // Tamaño de los puntos
+    }),
+    Plot.frame() // Agregar bordes a los gráficos facetados
+  ],
+  color: {
+    legend: true // Muestra la leyenda de colores
+  }
+
+})
+```
