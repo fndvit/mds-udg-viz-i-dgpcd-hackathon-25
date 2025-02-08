@@ -3,6 +3,316 @@ title: Exemples de codi
 toc: true
 ---
 
+
+<style>
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .button-container .card {
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1 1 150px;
+    margin: 0.5rem;
+  }
+
+  .button-container .card .category {
+    font-weight: 700;
+    min-width: 50px;
+  }
+
+  .button-container .card:hover {
+    background-color: #e0e0e0;
+  }
+
+  @media (max-width: 768px) {
+    .button-container {
+      justify-content: center;
+    }
+    .button-container .card {
+      flex: 1 1 45%;
+      font-size: 1rem;
+    }
+  }
+
+  /* Estilo para el contenedor del gráfico */
+  #charts-container {
+    width: 100%;
+    height: 600px; /* Ajustado para dar espacio al gráfico de barras */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 1rem;
+    background-color: #fafafa;
+  }
+
+  #violin-chart-container {
+    width: 100%;
+    height: 400px; /* Altura para el gráfico de violín */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 1rem;
+    background-color: #fafafa;
+  }
+</style>
+
+<!-- Incluir la librería Plotly -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- Contenedor de los botones -->
+<div class="button-container">
+    <div class="card" id="energia_calefacci" onclick="changeValue('energia_calefacci')">
+        🔥 Energia calefacció
+    </div>
+    <div class="card" id="energia_refrigeraci" onclick="changeValue('energia_refrigeraci')">
+        ❄️ Energia refrigeració
+    </div>
+    <div class="card" id="energia_acs" onclick="changeValue('energia_acs')">
+        💧 Energia ACS
+    </div>
+    <div class="card" id="energia_enllumenament" onclick="changeValue('energia_enllumenament')">
+        💡 Energia enllumenament
+    </div>
+    <div class="card" id="consum_d_energia_final" onclick="changeValue('consum_d_energia_final')">
+        ⚡ Consum d'energia final
+    </div>
+    <div class="card" id="xarxa_districte" onclick="changeValue('xarxa_districte')">
+        🌐 Xarxa districte
+    </div>
+    <div class="card" id="energia_geotermica" onclick="changeValue('energia_geotermica')">
+        🌍 Energia geotèrmica
+    </div>
+    <div class="card" id="sistema_biomassa" onclick="changeValue('sistema_biomassa')">
+        🌱 Sistema biomassa
+    </div>
+</div>
+
+<div id="charts-container">
+  <!-- Gráfico de barras acumuladas se generará aquí -->
+</div>
+
+<div id="violin-chart-container">
+  <!-- Gráfico de violín se generará aquí -->
+</div>
+
+<script type="module">
+  const data = {
+    "A": {
+        "energia_calefacci": 26818.68,
+        "energia_refrigeraci": 7153.94,
+        "energia_acs": 11188.02,
+        "energia_enllumenament": 10996.43,
+        "consum_d_energia_final": 35796.41,
+        "xarxa_districte": 16.0,
+        "energia_geotermica": 12.0,
+        "sistema_biomassa": 111.0
+    },
+    "B": {
+        "energia_calefacci": 108020.92,
+        "energia_refrigeraci": 23345.88,
+        "energia_acs": 31646.01,
+        "energia_enllumenament": 50521.63,
+        "consum_d_energia_final": 112415.88,
+        "xarxa_districte": 6.0,
+        "energia_geotermica": 6.0,
+        "sistema_biomassa": 48.0
+    },
+    "C": {
+        "energia_calefacci": 593386.76,
+        "energia_refrigeraci": 74713.25,
+        "energia_acs": 129467.01,
+        "energia_enllumenament": 202231.69,
+        "consum_d_energia_final": 530756.58,
+        "xarxa_districte": 15.0,
+        "energia_geotermica": 10.0,
+        "sistema_biomassa": 96.0
+    },
+    "D": {
+        "energia_calefacci": 1182804.75,
+        "energia_refrigeraci": 116231.07,
+        "energia_acs": 415386.73,
+        "energia_enllumenament": 202074.24,
+        "consum_d_energia_final": 1021674.87,
+        "xarxa_districte": 26.0,
+        "energia_geotermica": 11.0,
+        "sistema_biomassa": 170.0
+    },
+    "E": {
+        "energia_calefacci": 8260432.68,
+        "energia_refrigeraci": 470617.36,
+        "energia_acs": 3511404.58,
+        "energia_enllumenament": 221679.19,
+        "consum_d_energia_final": 7959047.88,
+        "xarxa_districte": 143.0,
+        "energia_geotermica": 36.0,
+        "sistema_biomassa": 503.0
+    },
+    "F": {
+        "energia_calefacci": 2402098.48,
+        "energia_refrigeraci": 126704.29,
+        "energia_acs": 1024098.37,
+        "energia_enllumenament": 156828.08,
+        "consum_d_energia_final": 2449881.99,
+        "xarxa_districte": 29.0,
+        "energia_geotermica": 9.0,
+        "sistema_biomassa": 104.0
+    },
+    "G": {
+        "energia_calefacci": 4462466.41,
+        "energia_refrigeraci": 206727.06,
+        "energia_acs": 1945024.48,
+        "energia_enllumenament": 233509.68,
+        "consum_d_energia_final": 4482966.76,
+        "xarxa_districte": 32.0,
+        "energia_geotermica": 18.0,
+        "sistema_biomassa": 99.0
+    }
+  };
+
+  const ratings = {
+    'sistema_biomassa': {
+      'D': 4718,
+      'C': 6700,
+      'B': 5385,
+      'A': 4767,
+      'E': 983,
+      'G': 273,
+      'F': 422
+    },
+    'xarxa_districte': {
+      'D': 517,
+      'C': 739,
+      'B': 535,
+      'A': 579,
+      'E': 154,
+      'G': 112,
+      'F': 108
+    },
+    'energia_geotermica': {
+      'D': 154,
+      'C': 275,
+      'B': 188,
+      'A': 269,
+      'E': 54,
+      'G': 27,
+      'F': 21
+    },
+    'rehabilitacio_energetica': {
+      'D': 2381,
+      'C': 3868,
+      'B': 4164,
+      'A': 5791,
+      'E': 509,
+      'G': 268,
+      'F': 286
+    }
+  };
+
+// Llamar a la función para actualizar las cards al cargar la página
+window.onload = updateCategoryValues;
+
+  const energyColors = {
+    "energia_calefacci": "#FF5733", 
+    "energia_refrigeraci": "#33C1FF", 
+    "energia_acs": "#FFDD33", 
+    "energia_enllumenament": "#FFC300", 
+    "consum_d_energia_final": "#7DFF33", 
+    "xarxa_districte": "#8E44AD", 
+    "energia_geotermica": "#1ABC9C", 
+    "sistema_biomassa": "#F39C12" 
+  };
+
+  const categories = Object.keys(data);  
+  const energies = Object.keys(data["A"]);
+
+  const plotData = energies.map(energy => {
+    return {
+      x: categories,
+      y: categories.map(category => data[category][energy]),
+      name: formatLabel(energy),
+      type: 'bar',
+      stackgroup: 'one',
+      marker: { color: energyColors[energy] }
+    };
+  });
+
+  const layoutBars = {
+    barmode: 'stack',
+    title: 'Distribución de Energías por Categoría',
+    xaxis: { title: 'Categorías Energéticas' },
+    yaxis: { title: 'Valor Energético' },
+    margin: { t: 40, r: 40, b: 60, l: 60 },
+    plot_bgcolor: '#f7f7f7',
+    paper_bgcolor: '#fafafa'
+  };
+
+  const plotViolinData = Object.keys(ratings).map(energy => {
+    return {
+      x: new Array(Object.keys(ratings[energy]).length).fill(formatLabel(energy)),
+      y: Object.values(ratings[energy]),
+      type: 'violin',
+      box: { visible: true },
+      line: { color: 'black' },
+      meanline: { visible: true },
+      name: formatLabel(energy),
+      fillcolor: energyColors[energy],  
+      opacity: 0.6
+    };
+  });
+
+  const layoutViolin = {
+    title: 'Distribución de Calificaciones por Energía',
+    yaxis: { title: 'Calificación' },
+    margin: { t: 40, r: 40, b: 60, l: 60 },
+    plot_bgcolor: '#f7f7f7',
+    paper_bgcolor: '#fafafa'
+  };
+
+  function formatLabel(label) {
+    return label.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());  
+  }
+
+  function changeValue(value) {
+    Plotly.newPlot('charts-container', plotData, layoutBars);
+    Plotly.newPlot('violin-chart-container', plotViolinData, layoutViolin);
+  }
+
+  Plotly.newPlot('charts-container', plotData, layoutBars);
+  Plotly.newPlot('violin-chart-container', plotViolinData, layoutViolin);
+
+  const means = {
+    "energia_calefacci": 142.469348,
+    "energia_refrigeraci": 8.763096,
+    "energia_acs": 52.894144,
+    "energia_enllumenament": 5.701210,
+    "consum_d_energia_final": 132.746740,
+    "xarxa_districte": 0.003197,
+    "energia_geotermica": 0.001269,
+    "sistema_biomassa": 0.025199
+  };
+
+  function updateCategoryValues() {
+    Object.keys(energyColors).forEach(energy => {
+      const categoryCard = document.getElementById(energy);
+      // Asignar el texto con el valor medio y mediano
+      categoryCard.innerHTML += `
+        <br> <strong> Media: ${means[energy].toFixed(2)} </strong>
+      `;
+    });
+  }
+
+  // Llamar a la función para actualizar las cards al cargar la página
+  window.onload = updateCategoryValues;
+</script>
+
 <style>
   img {
     border-radius: 1rem;
