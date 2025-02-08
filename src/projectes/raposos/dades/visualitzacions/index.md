@@ -3,8 +3,6 @@ title: Raposos
 toc: true
 ---
 
-# Visualitzacions
-
 ```js
 const MAPBOX_TOKEN = "pk.eyJ1IjoiZm5kdml0IiwiYSI6ImNseDR5dDV5dTBmeWMyaXNjemRkbDA3cHEifQ.HgSEJBTQzDFB-qBS2C4dvg";
 
@@ -158,22 +156,34 @@ map.on('load', function () {
 });
 ```
 
+# Dashboard
+
+## Retorn per Euro Invertit
 <div class="grid grid-cols-4">
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Girona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,19€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Barcelona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,25€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Tarragona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,20€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Lleida
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,20€</h1>
+    per € invertit
   </div>
 </div>
+<i>* dades d'Idealista</i>
 
-
+## Mapes Socioeconòmics
 <div class="grid grid-cols-3">
   <div class="card">
     <h1>Mapa de Gini</h1>
@@ -194,3 +204,57 @@ map.on('load', function () {
 
   </div>  
 </div>
+
+<div class="card">
+  <h1>Interpretació del camp Ratio</h1>
+
+  Aproximació en forma de valor entre 0 i 1 de la millora en l'estalvi per € invertit en actuacions de millora d'edificacions. La taula es mostra unificada per districte censal.
+</div>
+
+
+```js
+const codi_postal = view(
+  Inputs.text({
+    label: "Codi Postal",
+    placeholder: "00000",
+    type: "number",
+    maxlength: 5
+  })
+);
+```
+
+```js
+view(Inputs.table(
+  mapa_socioeconomic
+  .filter((e)=> e.codi_postal.startsWith(codi_postal))
+  .sort((a,b) => {
+    return b.ratio_norm - a.ratio_norm;
+  }).map((e) => {
+    return {
+      "Codi Districte": e.codi_districte,
+      "Codi Postal": e.codi_postal,
+      "Poblacio": e.poblacio,
+      "Renta Mitja per persona": (+e.renta_neta_mitja_por_persona).toFixed(2),
+      "Gini": (+e.indice_gini).toFixed(2),
+      "Ratio": (+e.ratio_norm).toFixed(4),
+    };
+  }),
+  {
+    width: {
+      "Codi Districte": 120,
+      "Codi Postal": 100,
+      "Poblacio": 150,
+      "Gini": 100,
+      "Ratio": 100,
+    },
+    align: {
+      "Codi Districte": "center",
+      "Codi Postal": "center",
+      "Poblacio": "center",
+      "Renta Mitja per persona": "center",
+      "Gini": "center",
+      "Ratio": "center",
+    },
+  }
+));
+```
