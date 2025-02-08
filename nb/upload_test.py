@@ -14,7 +14,7 @@ df.to_csv(csv_file, index=False)
 
 GITHUB_USER = "alexmichalec98"
 REPO_NAME = "Hackathon25"
-TOKEN = "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"
+TOKEN = ""
 FILE_PATH = "datos.csv"
 URL = f"https://api.github.com/repos/{GITHUB_USER}/{REPO_NAME}/contents/{FILE_PATH}"
 
