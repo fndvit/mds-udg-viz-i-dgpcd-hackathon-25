@@ -66,3 +66,4 @@ Excepte la presentació, que serà un enllaç, la resta de documents els haureu 
 Podeu explorar les nostres visualitzacions de dades aquí:
 
 [Explora les visualitzacions](./dades/visualitzacions/)
+[Report](./informe/)
