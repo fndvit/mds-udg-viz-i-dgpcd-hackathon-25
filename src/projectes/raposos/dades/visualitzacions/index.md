@@ -35,9 +35,6 @@ const createColorExpression = (data, id, join, scheme) => {
 const mapa_socioeconomic = FileAttachment("../../../../dades/raposos/mapa_socioeconomic_cleaned.csv").csv();
 ```
 
-```js
-mapa_socioeconomic
-```
 
 ```js 
 const choropleth_0 = display(document.createElement("div"));
@@ -156,6 +153,43 @@ map.on('load', function () {
 });
 ```
 
+```js 
+const choropleth_3 = display(document.createElement("div"));
+choropleth_3.style = "height: 540px;";
+
+const map = new mapboxgl.Map({
+  container: choropleth_3,
+  accessToken: MAPBOX_TOKEN,
+  style: 'mapbox://styles/fndvit/clvnpq95k01jg01qz1px52jzf',
+  center: [2.1745, 41.65],
+  zoom: 6.8
+});
+
+map.on('load', function () {
+  map.addSource("seccen", {
+    type: "vector",
+    url: "mapbox://fndvit.3n29djx2",
+    promoteId: "MUNDISSEC"
+  });
+
+  map.addLayer({
+    id: "seccen-fill",
+    type: "fill",
+    source: "seccen",
+    "source-layer": "seccen-dgddop",
+    paint: {
+      'fill-color': createColorExpression(mapa_socioeconomic, "MUNDISSEC", {id: "mundissec_original", prop: "ratio_norm"},
+        {
+         domain: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        range: ['#ffffff', '#ffffe0', '#d8f2e1', '#c0eade', '#9dced6', '#80b1cc', '#6694c1', '#4e78b5', '#325da9', '#003385', '#001c57', '#000d33']
+
+        }
+      )
+    }
+  }, "admin-1-boundary-bg");
+});
+```
+
 # Dashboard
 
 ## Retorn per Euro Invertit
@@ -201,7 +235,8 @@ map.on('load', function () {
 
 <div class="grid grid-cols-3">
   <div class="card grid-colspan-3">
-
+    <h1>Mapa de Ratio d'Inversió</h1>
+    <h2>Distribució de la qualificació d'Eficiència d'Energies No Renovables per seccions censals</h2>  ${resize((width) => choropleth_3)}
   </div>  
 </div>
 
