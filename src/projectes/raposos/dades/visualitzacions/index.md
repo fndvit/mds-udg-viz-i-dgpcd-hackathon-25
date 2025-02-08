@@ -3,8 +3,6 @@ title: Raposos
 toc: true
 ---
 
-# Visualitzacions
-
 ```js
 const MAPBOX_TOKEN = "pk.eyJ1IjoiZm5kdml0IiwiYSI6ImNseDR5dDV5dTBmeWMyaXNjemRkbDA3cHEifQ.HgSEJBTQzDFB-qBS2C4dvg";
 ```
@@ -14,7 +12,7 @@ const mapa_socioeconomic = FileAttachment("../../../../dades/raposos/mapa_socioe
 ```
 
 ```js
-mapa_socioeconomic
+// mapa_socioeconomic
 ```
 
 ```js 
@@ -83,22 +81,34 @@ map.on('load', function () {
 });
 ```
 
+# Dashboard
+
+## Retorn per Euro Invertit
 <div class="grid grid-cols-4">
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Girona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,19€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Barcelona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,25€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Tarragona
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,20€</h1>
+    per € invertit
   </div>
-  <div class="card">
-
+  <div class="card grid-colspan-1">
+    Lleida
+    <h1 style="margin-bottom: 10px; font-size: 50px;">1,20€</h1>
+    per € invertit
   </div>
 </div>
+<i>* dades d'Idealista</i>
 
-
+## Mapes Socioeconòmics
 <div class="grid grid-cols-3">
   <div class="card">
   ${resize((width) => choropleth)}
