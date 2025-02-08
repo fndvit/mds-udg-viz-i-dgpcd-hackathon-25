@@ -1,36 +1,53 @@
 # Report: Team Raposos 🦊
 
 ## Introduction
+Our scenario deals, for the most part, with energetic efficiency and socioeconomic inequalities. We want to find strategies to determine where it is most efficient to make investments regarding energetic efficiency, while also helping those regions where there's more poverty, or where the wealth is not shared evenly.
 
-Our scenario deals, for the most part, with energetic eficiency and socioeconomic inequities. We want to find strategies to determine where is most efficient to make investments regarding energetic efficiency, while also helping those regions where there's more poberty, or where the wealth is not shared evenly. 
+To achieve this, we want to estimate the ROI (Return Of Investment) for each zone, using metrics such as the energetic efficiency or the energy consumption of each zone. We also want to estimate the socieconomic situation of each region using metrics like the average income or the Gini index.
 
-To achieve this, we want to estimate the ROI (Return Of Investment) for each zone, using metrics such as the energetic efficicency or the energy consumption of each zone. We also want to estimate the socieconomic situation of each region using metrics like the average income or the Gini index.
+Some more general visualizations that don't answer the question directly, but that can provide some context and insight to the general situation will also be displayed.
 
 ## Objectives & Approaches
-
 More specifically, we want to:
 
-- Estimate the ROI (in energy savings) for different investment strategies. For this we will:
-    - Give a numeric value to each efficiency letter (From A to G).
-    - Calculate the mean efficiency in each zone.
-    - Ponderate it by the Gini index to take into account socioeconomical situation.
-    - Display it in a map, allowing to filter by edification type.
+- Show the mean cost and mean percentage energy savings by province. For this we will:
+    - Display a card for each province with the required values.
+
+- See the relationship between socioeconomic factors, energy efficiency qualifications and ROI (in energy savings). For this we will:
+    - Show a map with the mean Gini index for each censal district.
+    - Show a map with the mean income for each censal district.
+    - Show a map with the mean energetic efficiency for each censal district.
+        - Each efficiency (A-G) will be given a numerical value (1-7).
+    - Only take into account buildings classified as housing.    
 
 - Develop a prioritization tool for financing energy rehabilitation, focused on buildings with the highest savings potential per euro invested. Since the data for the investment is limited we will:
     - Obtain the mean rehabilitation cost for each province
     - Obtain the mean energy savings (proportion) for each province
     - Calculate the mean ROI (savings / cost) for each province
-    - Ponderate this ROI for each building by:
-        - Its energetic efficiency (inversely proportional)
+    - Ponderate this ROI for each censal district by:
+        - Its average energetic efficiency of the censal district (inversely proportional)
         - The average income of the censal district (inversely proportional)
-        - The Gini index of the censal district (directly proportional)
-    - Display a map and a table with these values.
+        - The average Gini index of the censal district (directly proportional)
+    - Display a map with these values.
+    - Generate a table with these values, in descending order.
+        - There will be a function to search by postal code.
+    - Again, only buildings classified as housing will be taken into account.
 
-- Additionally, we want to display a map simply showing the mean income and a map showing gini values, just to give some context.
+## Issues and Solutions
+In this section we will mainly detail the issue we found when trying to develop the tool to determine the best censal districts to invest.
 
-## Visualizations
+The issue was that we didn't have any data regarding the cost of each renovation, which made it impossible to get a reliable ROI (since we don't have the investment). So, we decided to use data from the ICE (Institut Català d'Energia), which detailed the total cost for all renovation projects in each province, and the total percentage of estimated energy saving. So, to get some approximations, we divided the total cost by the number of households considered in each province to get the mean cost per province. We also used the saved energy percentage as the mean saving per province. Again, this is of course only an estimation that isn't as precise as we'd like, but since we don't have the actual data it's the best approach we found to be able to estimate the ROI.
 
-## Conclusions
+Then, as the previous calculations give a single ROI per province (meaning, only 4 "blocks" of ROI) and we wanted different values for each censal district, we decided to ponderate it by the districts' mean energetic efficiency, average income and average Gini index.
 
+In summary, we first calculated the approximate ROI for each province, and then increased the result for censal districts with lower income, lower energetic efficiency, and higher Gini index.
 
-
+## Used data
+As data sources we used:
+- For energy-related data:
+    - certificats.csv, provided by the teachers and sourced from: https://analisi.transparenciacatalunya.cat/Energia/Certificats-d-efici-ncia-energ-tica-d-edificis/j6ii-t3w2/about_data
+- For socioeconomic data:
+    - INE (Institut Nacional d'Estadística) data: https://www.ine.es/dynt3/inebase/es/index.htm?padre=12385&capsel=12384
+- For data regarding renovation cost and savings (per province):
+    - ICE (Institut Català d'Energia) data: https://icaen.gencat.cat/es/energia/ajuts/edificis/ICAEN-Programa-de-ayudas-a-la-rehabilitacion-energetica-de-edificios-PREE/dades-obertes-tecniques-dels-ajuts-atorgats/index.html
+    - Idealista: https://www.idealista.com/news/inmobiliario/vivienda/2023/09/07/807896-la-reforma-energetica-de-una-vivienda-supone-un-ahorro-de-mas-de-300-euros-al-ano
