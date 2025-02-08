@@ -60,3 +60,10 @@ Excepte la presentació, que serà un enllaç, la resta de documents els haureu 
 - Tingueu en compte els costos indirectes i les barreres d'implementació que podrien afectar l'èxit de les estratègies.
 - Exploreu la possibilitat de combinar dades d'eficiència energètica amb altres indicadors socioeconòmics per a una visió més completa.
 - Proposeu mètriques per avaluar no només l'estalvi energètic, sinó també l'impacte social de les intervencions.
+
+## 📊 Visualitzacions
+
+Podeu explorar les nostres visualitzacions de dades aquí:
+
+[Explora les visualitzacions](./dades/visualitzacions/)
+[Report](./informe/)
