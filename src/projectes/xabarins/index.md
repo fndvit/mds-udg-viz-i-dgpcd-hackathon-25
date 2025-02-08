@@ -180,33 +180,30 @@ const p2 = {
 
 ## Q5
 ```js
-data = [
-  { zona_climatica: "A", emissions_de_co2: 20, indice_energia: 50, us_edifici: "Residencial" },
-  { zona_climatica: "A", emissions_de_co2: 40, indice_energia: 70, us_edifici: "Comercial" },
-  { zona_climatica: "B", emissions_de_co2: 35, indice_energia: 65, us_edifici: "Industrial" },
-  { zona_climatica: "B", emissions_de_co2: 25, indice_energia: 55, us_edifici: "Residencial" },
-  { zona_climatica: "C", emissions_de_co2: 30, indice_energia: 60, us_edifici: "Comercial" },
-  { zona_climatica: "C", emissions_de_co2: 45, indice_energia: 80, us_edifici: "Industrial" }
-];
+const scatter_q5 = FileAttachment("scatter_q5.csv").csv({typed: true});
+console.log(scatter_q5)
+```
 
+```js
 // Crear el scatter plot con facetas
 Plot.plot({
   facet: {
-    data: data,
-    x: "zona_climatica"  // Se crean paneles por cada valor de zona_climatica
+    data: scatter_q5,
+    y: "zona_climatica",  // Facetamos por zona_climatica
   },
+  x: { domain: [0, 1] },
   marks: [
-    Plot.dot(data, {
-      x: "emissions_de_co2",
-      y: "indice_energia",
-      fill: "us_edifici",  // El color depende de us_edifici
-      r: 5 // Tamaño de los puntos
+    Plot.dot(scatter_q5, {
+      y: "emissions_de_co2",
+      x: "indice_energia",
+      fill: "us_edifici",  // Color basado en us_edifici
+      r: 1 // Tamaño de los puntos
     }),
-    Plot.frame() // Añadir bordes a los gráficos facetados
+    Plot.frame() // Agregar bordes a los gráficos facetados
   ],
   color: {
-    legend: true // Muestra la leyenda para el color
+    legend: true // Muestra la leyenda de colores
   }
+
 })
 ```
-
