@@ -28,5 +28,9 @@ More specifically, we want to:
 
 - Additionally, we want to display a map simply showing the mean income and a map showing gini values, just to give some context.
 
+## Visualizations
+
+## Conclusions
+
 
 
